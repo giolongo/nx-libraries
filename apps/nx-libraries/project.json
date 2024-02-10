@@ -1,0 +1,69 @@
+{
+  "name": "nx-libraries",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "nx-tree-gle",
+  "sourceRoot": "apps/nx-libraries/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/nx-libraries",
+        "index": "apps/nx-libraries/src/index.html",
+        "browser": "apps/nx-libraries/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/nx-libraries/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/nx-libraries/src/favicon.ico",
+          "apps/nx-libraries/src/assets"
+        ],
+        "styles": ["apps/nx-libraries/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "nx-libraries:build:production"
+        },
+        "development": {
+          "buildTarget": "nx-libraries:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "nx-libraries:build"
+      }
+    }
+  }
+}
