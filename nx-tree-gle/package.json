@@ -1,0 +1,30 @@
+{
+  "name": "@giovanniemanuelelongo/nx-tree",
+  "version": "0.0.3",
+  "description": "Simple Tree viewer",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/giolongo/nx-tree-glee"
+  },
+  "keywords": [
+    "angular",
+    "state",
+    "tree",
+    "nx-tree"
+  ],
+  "author": {
+    "name": "Giovanni Emanuele Longo"
+  },
+  "peerDependencies": {
+    "@angular/common": "^17.1.0",
+    "@angular/core": "^17.1.0",
+    "material-icons": "^1.13.12"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

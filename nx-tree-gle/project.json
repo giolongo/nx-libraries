@@ -1,0 +1,26 @@
+{
+  "name": "nx-tree-gle",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nx-tree-gle/src",
+  "prefix": "nx-tree-gle",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "nx-tree-gle/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "nx-tree-gle/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "nx-tree-gle/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

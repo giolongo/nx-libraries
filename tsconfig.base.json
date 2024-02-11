@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@gle": ["nx-tree-gle/src/index.ts"],
+      "@nx-tree-gle/nx-tree-gle": ["nx-tree-gle/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

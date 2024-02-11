@@ -1,0 +1,25 @@
+<ng-container *ngTemplateOutlet="recursiveTemplate; context: {element}"></ng-container>
+<ng-template #recursiveTemplate let-element="element">
+  <div style="padding-left: {{plSize}}; padding-top: {{ptSize}}" *ngFor="let item of element | keyvalue; let i = index">
+    <div *ngIf="item.value | isObjectOrArray">
+      <div class="cursor-pointer" (click)="openCloseItem(item.key)">
+          <span *ngIf="otherFunction?.[item.key+'']?.icon; else openedItemKey.includes(item.key) ? noIconOpen : noIconClose;"
+                [innerHTML]="otherFunction?.[item.key+'']?.icon"></span> {{item.key}}:
+      </div>
+      <div *ngIf="item.value?.isOpen">
+        <ng-container *ngTemplateOutlet="recursiveTemplate; context: {element: item.value}"></ng-container>
+      </div>
+    </div>
+    <div class="cursor-pointer" *ngIf="!(item.value | isObjectOrArray)" (click)="clickElement(item.key)">
+      • {{item.key}}: {{item.value}}
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noIconClose>
+  <span class="fs-small material-icons-outlined">keyboard_arrow_right</span>
+</ng-template>
+
+<ng-template #noIconOpen>
+  <span class="fs-small material-icons-outlined">keyboard_arrow_down</span>
+</ng-template>
