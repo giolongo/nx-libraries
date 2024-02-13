@@ -1,5 +1,9 @@
+<button (click)="openAll.emit()">Apri tutti</button>
+<button (click)="closeAll.emit()">Chiudi tutti</button>
 <nx-tree-gle [element]="element"
              openDefaultIcon="<span class='fs-small material-icons-outlined'>keyboard_arrow_down</span>"
              closeDefaultIcon="<span class='fs-small material-icons-outlined'>keyboard_arrow_right</span>"
+             [openAll]="openAll"
+             [closeAll]="closeAll"
 ></nx-tree-gle>
 <router-outlet></router-outlet>

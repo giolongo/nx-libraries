@@ -1,13 +1,13 @@
 {
   "name": "@giolongo/nx-tree",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Simple Tree viewer",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/giolongo/nx-tree-glee"
+    "url": "https://github.com/giolongo/nx-libraries/tree/feature/dev/nx-tree-gle"
   },
   "keywords": [
     "angular",

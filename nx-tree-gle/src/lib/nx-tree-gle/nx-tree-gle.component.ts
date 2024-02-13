@@ -17,7 +17,7 @@ import {IsObjectPipe} from "../is-object.pipe";
     '}'],
 })
 export class NxTreeGleComponent {
-  @Input() element!: any;
+  @Input({ required: true }) element!: any;
   @Input() otherFunction?: {
     [key: string]: {
       icon?: 'string',
@@ -32,7 +32,7 @@ export class NxTreeGleComponent {
   @Input() closeDefaultIcon?: string;
   @Output() changeItemStatus = new EventEmitter<unknown>;
   @Output() listOpenedItem = new EventEmitter<unknown[]>;
-  protected openedItemKey: unknown[] = [];
+  public openedItemKey: unknown[] = [];
 
   private isObjectOrArrayPipe = inject(IsObjectOrArrayPipe);
 
@@ -54,11 +54,11 @@ export class NxTreeGleComponent {
     this.otherFunction?.[key + '']?.click?.();
   }
 
-  openAllFn(element: any) {
+  openAllFn(element: any, parent?: string) {
     if (this.isObjectOrArrayPipe.transform(element)) {
       Object.keys(element).forEach((key: string) => {
-        this.openedItemKey.push(key);
-        this.openAllFn(element[key])
+        this.openedItemKey.push(parent ? parent+'.'+key : key);
+        this.openAllFn(element[key], key)
       })
     }
 

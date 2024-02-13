@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter} from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import {NxTreeGleComponent} from "@gle";
@@ -12,6 +12,8 @@ import {NxTreeGleComponent} from "@gle";
 })
 export class AppComponent {
   title = 'nx-libraries';
+  openAll = new EventEmitter();
+  closeAll = new EventEmitter();
   public element = {
     "medications":[{
     "imaging":[{

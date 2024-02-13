@@ -10,15 +10,14 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "nx-tree-gle/ng-package.json",
-        "assets": ["./assets/*.svg"]
+        "project": "nx-tree-gle/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "nx-tree-gle/tsconfig.lib.prod.json"
+          "tsConfig": "tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "nx-tree-gle/tsconfig.lib.json"
+          "tsConfig": "tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
