@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/giolongo/nx-libraries/tree/feature/dev/nx-tree-gle"
+    "url": "https://github.com/giolongo/nx-libraries/tree/master/nx-tree-gle"
   },
   "keywords": [
     "angular",
