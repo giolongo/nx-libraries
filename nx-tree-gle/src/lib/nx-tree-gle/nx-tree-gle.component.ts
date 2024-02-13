@@ -4,22 +4,21 @@ import {IsObjectOrArrayPipe} from "../is-object-or-array.pipe";
 import {IsArrayPipe} from "../is-array.pipe";
 import {IsObjectPipe} from "../is-object.pipe";
 
+
 @Component({
   selector: 'nx-tree-gle',
   standalone: true,
   imports: [CommonModule, IsObjectOrArrayPipe, IsArrayPipe, IsObjectPipe],
   providers: [IsObjectOrArrayPipe],
   templateUrl: './nx-tree-gle.component.html',
-  styles: ['.fs-small {\n' +
-    '  font-size: small;\n' +
-    '}\n' +
+  styles: [
     '.cursor-pointer {\n' +
     '  cursor: pointer;\n' +
     '}'],
 })
 export class NxTreeGleComponent {
   @Input() element!: any;
-  @Input() otherFunction!: {
+  @Input() otherFunction?: {
     [key: string]: {
       icon?: 'string',
       click?: () => unknown
@@ -29,24 +28,26 @@ export class NxTreeGleComponent {
   @Input() closeAll!: EventEmitter<void>;
   @Input() plSize?: string = '2vw';
   @Input() ptSize?: string = '1vh';
+  @Input() openDefaultIcon?: string;
+  @Input() closeDefaultIcon?: string;
   @Output() changeItemStatus = new EventEmitter<unknown>;
   @Output() listOpenedItem = new EventEmitter<unknown[]>;
   protected openedItemKey: unknown[] = [];
 
   private isObjectOrArrayPipe = inject(IsObjectOrArrayPipe);
 
-  openCloseItem(key: unknown) {
+  openCloseItem(key: unknown, parent: unknown) {
+    debugger;
+    const newKey = parent ? parent+'.'+key : key;
     this.clickElement(key);
-    debugger
-    this.element[key + ''].isOpen = !this.element[key + ''].isOpen
-    // if (this.openedItemKey.includes(key)) {
-    //   this.openedItemKey = this.openedItemKey.filter(i => i !== key);
-    //   this.changeItemStatus.emit({[key + '']: 'close'});
-    // } else {
-    //   this.openedItemKey.push(key);
-    //   this.changeItemStatus.emit({[key + '']: 'open'});
-    // }
-    // this.listOpenedItem.emit(this.openedItemKey);
+    if (this.openedItemKey.includes(newKey)) {
+      this.openedItemKey = this.openedItemKey.filter(i => i !== newKey);
+      this.changeItemStatus.emit({[key + '']: 'close'});
+    } else {
+      this.openedItemKey.push(newKey);
+      this.changeItemStatus.emit({[key + '']: 'open'});
+    }
+    this.listOpenedItem.emit(this.openedItemKey);
   }
 
   clickElement(key?: unknown) {

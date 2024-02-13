@@ -1,13 +1,13 @@
 <ng-container *ngTemplateOutlet="recursiveTemplate; context: {element}"></ng-container>
-<ng-template #recursiveTemplate let-element="element">
+<ng-template #recursiveTemplate let-element="element" let-parent="parent">
   <div style="padding-left: {{plSize}}; padding-top: {{ptSize}}" *ngFor="let item of element | keyvalue; let i = index">
     <div *ngIf="item.value | isObjectOrArray">
-      <div class="cursor-pointer" (click)="openCloseItem(item.key)">
-          <span *ngIf="otherFunction?.[item.key+'']?.icon; else openedItemKey.includes(item.key) ? noIconOpen : noIconClose;"
+      <div class="cursor-pointer" (click)="openCloseItem(item.key, parent)">
+          <span *ngIf="otherFunction?.[item.key+'']?.icon; else openedItemKey.includes(parent ? parent+'.'+item.key : item.key) ? noIconOpen : noIconClose;"
                 [innerHTML]="otherFunction?.[item.key+'']?.icon"></span> {{item.key}}:
       </div>
-      <div *ngIf="item.value?.isOpen">
-        <ng-container *ngTemplateOutlet="recursiveTemplate; context: {element: item.value}"></ng-container>
+      <div *ngIf="openedItemKey.includes(parent ? parent+'.'+item.key : item.key)">
+        <ng-container *ngTemplateOutlet="recursiveTemplate; context: {element: item.value, parent: item.key}"></ng-container>
       </div>
     </div>
     <div class="cursor-pointer" *ngIf="!(item.value | isObjectOrArray)" (click)="clickElement(item.key)">
@@ -17,9 +17,9 @@
 </ng-template>
 
 <ng-template #noIconClose>
-  <span class="fs-small material-icons-outlined">keyboard_arrow_right</span>
+  <span [innerHTML]="closeDefaultIcon"></span>
 </ng-template>
 
 <ng-template #noIconOpen>
-  <span class="fs-small material-icons-outlined">keyboard_arrow_down</span>
+  <span [innerHTML]="openDefaultIcon"></span>
 </ng-template>

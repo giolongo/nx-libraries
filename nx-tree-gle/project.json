@@ -10,7 +10,8 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "nx-tree-gle/ng-package.json"
+        "project": "nx-tree-gle/ng-package.json",
+        "assets": ["./assets/*.svg"]
       },
       "configurations": {
         "production": {

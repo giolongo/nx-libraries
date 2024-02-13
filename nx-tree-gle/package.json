@@ -1,6 +1,6 @@
 {
-  "name": "@giovanniemanuelelongo/nx-tree",
-  "version": "0.0.3",
+  "name": "@giolongo/nx-tree",
+  "version": "0.0.1",
   "description": "Simple Tree viewer",
   "publishConfig": {
     "access": "public"
@@ -20,8 +20,7 @@
   },
   "peerDependencies": {
     "@angular/common": "^17.1.0",
-    "@angular/core": "^17.1.0",
-    "material-icons": "^1.13.12"
+    "@angular/core": "^17.1.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

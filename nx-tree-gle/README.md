@@ -25,6 +25,8 @@ NxTreeGeeComponent
 ]
 })`
 
+You can use your icon set, important is import it in style.css project or in styles tag inside your project.json
+
 
 ### API
 #### Inputs
@@ -32,9 +34,11 @@ NxTreeGeeComponent
 * otherFunction: An object containing functions to be called when an item is clicked.
 * openAll: An EventEmitter to trigger opening all tree nodes.
 * closeAll: An EventEmitter to trigger closing all tree nodes.
+* openDefaultIcon: Html for binding your open default icon.
+* closeDefaultIcon: Html for binding your close default icon.
 * plSize: The padding-left size of each node (default: '2vw').
 * ptSize: The padding-top size of each node (default: '1vh').
 
 #### Outputs
 * changeItemStatus: An EventEmitter emitting the status change of an item (open/close).
-  *listOpenedItem: An EventEmitter emitting the list of currently opened items.
+* listOpenedItem: An EventEmitter emitting the list of currently opened items.
