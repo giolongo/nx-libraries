@@ -37,7 +37,6 @@ export class NxTreeGleComponent {
   private isObjectOrArrayPipe = inject(IsObjectOrArrayPipe);
 
   openCloseItem(key: unknown, parent: unknown) {
-    debugger;
     const newKey = parent ? parent+'.'+key : key;
     this.clickElement(key);
     if (this.openedItemKey.includes(newKey)) {
