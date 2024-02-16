@@ -20,7 +20,7 @@ export class NxTreeGleComponent {
   @Input({ required: true }) element!: any;
   @Input() otherFunction?: {
     [key: string]: {
-      icon?: 'string',
+      icon?: string,
       click?: () => unknown
     }
   };

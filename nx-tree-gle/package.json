@@ -1,6 +1,6 @@
 {
   "name": "@giolongo/nx-tree",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Simple Tree viewer",
   "publishConfig": {
     "access": "public"
@@ -13,8 +13,24 @@
     "angular",
     "state",
     "tree",
-    "nx-tree"
-  ],
+    "nx-tree",
+    "ngxtree",
+    "componentngx",
+    "treetree-ngxtree",
+    "ngxng",
+    "component",
+    "gangularng",
+    "angular2",
+    "treeview",
+    "angular2-tree",
+    "angular-tree",
+    "angular",
+    "treeangular2",
+    "treeng2-treeng2treeng2",
+    "treeng",
+    "treeng-tree"
+
+ ],
   "author": {
     "name": "Giovanni Emanuele Longo"
   },
