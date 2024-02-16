@@ -6,6 +6,10 @@ You can install nx-tree-gle via npm:
 
 `npm install nx-tree-gle`
 
+## Demo
+
+[Simple Demo](https://giolongo.github.io/nx-libraries-demo/nx-tree-glee).
+
 ## Usage
 Import NxTreeGleComponent into your Angular module:
 
@@ -25,6 +29,8 @@ NxTreeGleComponent
 ]
 })`
 
+In Standalone Component
+
 `
 import {NxTreeGleComponent} from "@giolongo/nx-tree";
 @Component({
@@ -38,7 +44,7 @@ styleUrl: './nx-tree-gle-use.component.scss'
 })
 `
 
-In Standalone Component
+
 
 
 You can use your icon set, important is import it in style.css project or in styles tag inside your project.json
