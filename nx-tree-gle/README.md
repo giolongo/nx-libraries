@@ -8,7 +8,7 @@ You can install nx-tree-gle via npm:
 
 ## Demo
 
-[Simple Demo](https://giolongo.github.io/nx-libraries-demo/nx-tree-glee).
+[Simple Demo](https://giolongo.github.io/nx-libraries-demo).
 
 ## Usage
 Import NxTreeGleComponent into your Angular module:
