@@ -1,6 +1,6 @@
 {
   "name": "@giolongo/nx-tree",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple Tree viewer",
   "publishConfig": {
     "access": "public"
