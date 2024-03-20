@@ -1,0 +1,11 @@
+<div #scrollableElement (mousedown)="startDragging($event)"
+     [class]="classContainer"
+     (mouseup)="stopDragging()"
+     (mouseleave)="stopDragging()"
+     (mousemove)="moveEvent($event)"
+     [style.max-height]="maxHeight" [style.max-width]="maxWidth"
+     style="overflow-x: hidden; display: flex">
+  <div class="classElement" *ngFor="let element of elements" [style.height]="elementHeight"
+       [style.flex]="'0 0 '+elementWidth"
+       [innerHTML]="element"></div>
+</div>

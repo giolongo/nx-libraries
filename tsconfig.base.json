@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@giolongo": ["nx-draggable-carousel/src/index.ts"],
       "@gle": ["nx-tree-gle/src/index.ts"],
       "@nx-tree-gle/nx-tree-gle": ["nx-tree-gle/src/index.ts"]
     }

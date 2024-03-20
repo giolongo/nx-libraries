@@ -4,7 +4,7 @@ nx-tree-gle is an Angular component designed to display tree-like structures wit
 ## Installation
 You can install nx-tree-gle via npm:
 
-`npm install nx-tree-gle`
+`npm install nx-tree`
 
 ## Usage
 Import NxTreeGeeComponent into your Angular module:
