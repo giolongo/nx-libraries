@@ -20,7 +20,7 @@ export class NxTreeGleComponent {
   @Input({ required: true }) element!: any;
   @Input() otherFunction?: {
     [key: string]: {
-      icon?: 'string',
+      icon?: string,
       click?: () => unknown
     }
   };
@@ -57,6 +57,7 @@ export class NxTreeGleComponent {
     if (this.isObjectOrArrayPipe.transform(element)) {
       Object.keys(element).forEach((key: string) => {
         this.openedItemKey.push(parent ? parent+'.'+key : key);
+        this.listOpenedItem.emit(this.openedItemKey);
         this.openAllFn(element[key], key)
       })
     }
@@ -65,6 +66,9 @@ export class NxTreeGleComponent {
 
   ngOnInit(): void {
     this.openAll?.subscribe(() => this.openAllFn(this.element));
-    this.closeAll?.subscribe(() => this.openedItemKey = []);
+    this.closeAll?.subscribe(() => {
+      this.openedItemKey = []
+      this.listOpenedItem.emit(this.openedItemKey);
+    });
   }
 }

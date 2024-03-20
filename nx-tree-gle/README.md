@@ -6,24 +6,46 @@ You can install nx-tree-gle via npm:
 
 `npm install nx-tree`
 
+## Demo
+
+[Simple Demo](https://giolongo.github.io/nx-libraries-demo).
+
 ## Usage
-Import NxTreeGeeComponent into your Angular module:
+Import NxTreeGleComponent into your Angular module:
 
 `import { NgModule } from '@angular/core';`
 
-`import { NxTreeGeeComponent } from 'nx-tree-gle';`
+`import {NxTreeGleComponent} from "@giolongo/nx-tree";`
 
 `@NgModule({
 declarations: [
-NxTreeGeeComponent
+NxTreeGleComponent
 ],
 imports: [
 // Any necessary modules
 ],
 exports: [
-NxTreeGeeComponent
+NxTreeGleComponent
 ]
 })`
+
+In Standalone Component
+
+`
+import {NxTreeGleComponent} from "@giolongo/nx-tree";
+@Component({
+selector: 'app-nx-tree-gle-use',
+standalone: true,
+imports: [
+NxTreeGleComponent,
+],
+templateUrl: './nx-tree-gle-use.component.html',
+styleUrl: './nx-tree-gle-use.component.scss'
+})
+`
+
+
+
 
 You can use your icon set, important is import it in style.css project or in styles tag inside your project.json
 
