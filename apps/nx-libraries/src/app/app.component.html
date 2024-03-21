@@ -6,12 +6,13 @@
              [openAll]="openAll"
              [closeAll]="closeAll"
 ></nx-tree-gle>
-
+<input [(ngModel)]="automove">
 <nx-draggable-carousel
 [elementHeight]="'500px'"
 [elementWidth]="'500px'"
 [maxHeight]="'600px'"
 [maxWidth]="'700px'"
+[debounceAutoMove]="automove"
 [elements]="elementForCarousel"
 ></nx-draggable-carousel>
 <router-outlet></router-outlet>

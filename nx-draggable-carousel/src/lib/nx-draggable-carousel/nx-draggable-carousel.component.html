@@ -3,9 +3,12 @@
      (mouseup)="stopDragging()"
      (mouseleave)="stopDragging()"
      (mousemove)="moveEvent($event)"
+     [style.cursor]="isMouseDown ? 'grabbing' : 'grab'"
+     [style.overflow-x]="'hidden'"
+     [style.display]="'flex'"
      [style.max-height]="maxHeight" [style.max-width]="maxWidth"
-     style="overflow-x: hidden; display: flex">
-  <div class="classElement" *ngFor="let element of elements" [style.height]="elementHeight"
+     style="overflow-x: hidden; display: flex;">
+  <div [class]="classElement" *ngFor="let element of elements" [style.height]="elementHeight"
        [style.flex]="'0 0 '+elementWidth"
        [innerHTML]="element"></div>
 </div>

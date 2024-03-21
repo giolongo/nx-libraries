@@ -1,12 +1,12 @@
 {
-  "name": "@giolongo/nx-dragabble-carousel",
-  "version": "0.0.1",
+  "name": "@giolongo/nx-draggable-carousel",
+  "version": "1.0.3",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/giolongo/nx-libraries/tree/master/nx-dragabble-carousel"
+    "url": "https://github.com/giolongo/nx-libraries/tree/master/nx-draggable-carousel"
   },
   "keywords": [
     "angular",
