@@ -25,9 +25,9 @@ export class NxDraggableCarouselComponent implements OnChanges{
 
   @ViewChild('scrollableElement') scrollableElement!: ElementRef;
 
-  startDragging(event: MouseEvent) {
+  startDragging(event: MouseEvent | TouchEvent) {
     this.isMouseDown = true;
-    this.xStartPosition = event.pageX - this.scrollableElement.nativeElement.offsetLeft;
+    this.xStartPosition = this.findX(event) - this.scrollableElement.nativeElement.offsetLeft;
     this.moveLeft = this.scrollableElement.nativeElement.scrollLeft;
   }
 
@@ -35,13 +35,17 @@ export class NxDraggableCarouselComponent implements OnChanges{
     this.isMouseDown = false;
   }
 
-  moveEvent(event: MouseEvent) {
+  moveEvent(event: MouseEvent | TouchEvent) {
     event.preventDefault();
     if (this.isMouseDown) {
-      const x = event.pageX - this.scrollableElement.nativeElement.offsetLeft;
+      const x =  this.findX(event) - this.scrollableElement.nativeElement.offsetLeft;
       const scroll = x - this.xStartPosition;
       this.scrollableElement.nativeElement.scrollLeft = this.moveLeft - scroll;
     }
+  }
+
+  private findX(event: MouseEvent | TouchEvent): number {
+    return ('pageX' in event) ? event.pageX : event.touches[0].pageX;
   }
 
   ngOnInit(): void {

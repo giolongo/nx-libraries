@@ -1,8 +1,12 @@
-<div #scrollableElement (mousedown)="startDragging($event)"
+<div #scrollableElement
+     (touchstart)="startDragging($event)"
+     (mousedown)="startDragging($event)"
      [class]="classContainer"
      (mouseup)="stopDragging()"
+     (touchend)="stopDragging()"
      (mouseleave)="stopDragging()"
      (mousemove)="moveEvent($event)"
+     (touchmove)="moveEvent($event)"
      [style.cursor]="isMouseDown ? 'grabbing' : 'grab'"
      [style.overflow-x]="'hidden'"
      [style.display]="'flex'"
